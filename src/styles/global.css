@@ -1,0 +1,55 @@
+:root {
+  font-family: "Nunito", "Segoe UI", sans-serif;
+  color: #3f4355;
+  background: #f3f5f8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-page: #f3f5f8;
+  --color-surface: #ffffff;
+  --color-task-surface: #f4f6f8;
+  --color-text: #3f4355;
+  --color-muted: #8b9bb9;
+
+  --color-checkbox-border: #c7d2e2;
+  --color-checkbox-checked: #f47ba5;
+
+  --color-blue: #8ecdf5;
+  --color-blue-dark: #68b9e9;
+  --color-blue-soft: #e8f6ff;
+  --color-border-focus: #b9e3fa;
+
+  --color-danger: #ff646d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--color-page);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  color: #3f4355;
+  background: #ffd7e7;
+}

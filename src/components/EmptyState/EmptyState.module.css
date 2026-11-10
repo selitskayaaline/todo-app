@@ -1,0 +1,102 @@
+.emptyState {
+  display: flex;
+  min-height: min(540px, 62vh);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 16px 48px;
+  text-align: center;
+  animation: emptyStateAppear 800ms ease both;
+}
+
+.illustration {
+  display: block;
+  width: 146px;
+  height: 142px;
+  margin-bottom: 18px;
+  object-fit: contain;
+}
+
+.message {
+  margin: 0 0 16px;
+  color: var(--color-muted);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.createButton {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 17px;
+  color: #ffffff;
+  background: #f47ba5;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.createButton:hover {
+  background: #e85e91;
+}
+
+.createButton:active {
+  transform: scale(0.97);
+}
+
+.createButton:focus-visible {
+  outline: 3px solid rgb(244 123 165 / 30%);
+  outline-offset: 3px;
+}
+
+.createButton svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+@keyframes emptyStateAppear {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .emptyState {
+    min-height: 62vh;
+    padding-bottom: 36px;
+  }
+
+  .illustration {
+    width: 130px;
+    height: 128px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .emptyState {
+    animation: none;
+  }
+
+  .createButton {
+    transition: none;
+  }
+}
