@@ -1,4 +1,5 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { loadTasks, saveTasks } from "../utils/storage.js";
 
 function createTaskId() {
   if (globalThis.crypto?.randomUUID) {
@@ -9,7 +10,11 @@ function createTaskId() {
 }
 
 export function useTasks() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(loadTasks);
+
+  useEffect(() => {
+    saveTasks(tasks);
+  }, [tasks]);
 
   const addTask = useCallback((title) => {
     const cleanTitle = title.trim();
