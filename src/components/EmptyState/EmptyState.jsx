@@ -2,21 +2,26 @@ import styles from "./EmptyState.module.css";
 
 export default function EmptyState({ onCreateTask }) {
   return (
-    <section className={styles.emptyState}>
+    <section className={styles.emptyState} aria-labelledby="empty-state-title">
       <img
         className={styles.illustration}
         src={`${import.meta.env.BASE_URL}empty-state.svg`}
-        alt="No tasks yet"
+        alt="Pink clipboard with an empty task list"
       />
 
-      <h2 className={styles.title}>No tasks yet</h2>
-
-      <p className={styles.description}>
-        Create your first task and start organizing your day.
+      <p className={styles.message} id="empty-state-title">
+        You have no tasks listed.
       </p>
 
-      <button className={styles.button} type="button" onClick={onCreateTask}>
-        Create task
+      <button
+        className={styles.createButton}
+        type="button"
+        onClick={onCreateTask}
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M12 5v14M5 12h14" />
+        </svg>
+        <span>Create task</span>
       </button>
     </section>
   );
