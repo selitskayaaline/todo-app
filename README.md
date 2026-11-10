@@ -1,16 +1,88 @@
-# React + Vite
+# TODO App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive task management application built with React. Create, complete, and delete tasks with automatic local storage persistence.
 
-Currently, two official plugins are available:
+**Live Demo:** [GitHub Pages](#)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Create tasks using Enter or the Add Task button.
+- Mark tasks as completed or active.
+- Delete tasks.
+- Persist tasks in browser localStorage.
+- Restore tasks after page reload.
+- Cancel task creation with Escape.
+- Prevent empty and duplicate submissions.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+React · JavaScript · Vite · CSS Modules · Vitest · React Testing Library · ESLint
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Installation
+
+```bash
+git clone <repository-url>
+cd todo-app
+npm install
+```
+
+## Development
+
+```bash
+npm run dev
+```
+
+Application: `http://localhost:5173`
+
+## Build
+
+```bash
+npm run lint
+npm run test:run
+npm run build
+```
+
+Preview production build:
+
+```bash
+npm run preview
+```
+
+## Tests
+
+20 tests covering:
+
+- `storage` — localStorage persistence and invalid data handling.
+- `useTasks` — task creation, deletion, and completion.
+- `TaskInput` — keyboard interactions, validation, and duplicate submission protection.
+- `App` — main user flows and component integration.
+
+Run tests:
+
+```bash
+npm run test:run
+```
+
+## Project Structure
+
+```text
+src/
+├── components/
+│   ├── EmptyState/
+│   ├── Header/
+│   ├── TaskInput/
+│   ├── TaskItem/
+│   └── TaskList/
+├── hooks/
+│   └── useTasks.js
+├── utils/
+│   └── storage.js
+├── test/
+│   └── setup.js
+├── App.jsx
+└── main.jsx
+```
+
+## Data Persistence
+
+Tasks are stored in the browser using `localStorage`. The application works without a backend or external database.
