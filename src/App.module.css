@@ -20,6 +20,55 @@
   margin: 28px auto 0;
 }
 
+.addPrompt {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 42px;
+  margin: 0 0 20px 18px;
+  padding: 4px 8px 4px 0;
+  color: #f47ba5;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+  transition:
+    color 160ms ease,
+    opacity 160ms ease;
+}
+
+.addPrompt:hover {
+  color: #e85e91;
+}
+
+.addPrompt:focus-visible {
+  outline: 3px solid rgb(244 123 165 / 25%);
+  outline-offset: 3px;
+}
+
+.promptIcon {
+  display: grid;
+  width: 21px;
+  height: 21px;
+  place-items: center;
+  flex: 0 0 21px;
+}
+
+.promptIcon svg {
+  display: block;
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.9;
+}
+
 @media (max-width: 640px) {
   .page {
     padding: 0;
@@ -34,5 +83,10 @@
 
   .main {
     margin-top: 24px;
+  }
+
+  .addPrompt {
+    margin-left: 4px;
+    margin-bottom: 16px;
   }
 }
