@@ -2,7 +2,7 @@
 
 A responsive task management application built with React. Create, complete, and delete tasks with automatic local storage persistence.
 
-**Live Demo:** [GitHub Pages](#)
+**Live Demo:** https://selitskayaaline.github.io/todo-app/
 
 ## Features
 
